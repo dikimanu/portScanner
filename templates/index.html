@@ -4,93 +4,142 @@
 
 <head>
 
-    <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta charset="UTF-8">
 
-    <title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-        SecurePortScanner
+<title>
+    SecurePortScanner
+</title>
 
-    </title>
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+>
 
-    <link
-
-        rel="stylesheet"
-
-        href="{{ url_for('static', filename='style.css') }}"
-
-    >
 
 </head>
 
 <body>
 
-    <div class="container">
 
-        <h1>
+<div class="container">
 
-            SecurePortScanner
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <h1>SecurePortScanner</h1>
 
-        </h1>
+    <p class="subtitle">
+        Web-Based Network Port Scanner & Service Analyzer
+    </p>
 
-        <p>
+    <!-- =========================
+         SCAN FORM
+    ========================== -->
+    <form
+        action="/scan"
+        method="POST"
+        onsubmit="startProgress()"
+    >
 
-            Web-Based Network Port Scanner
-            & Service Analyzer
+        <input
+            type="text"
+            name="target"
+            placeholder="Enter Target IP Address"
+            required
+        >
 
+        <input
+            type="number"
+            name="start_port"
+            placeholder="Start Port"
+            required
+        >
+
+        <input
+            type="number"
+            name="end_port"
+            placeholder="End Port"
+            required
+        >
+
+        <button type="submit">
+            Start Scan
+        </button>
+
+    </form>
+
+    <!-- =========================
+         PROGRESS BAR
+    ========================== -->
+    <div
+        id="progress-container"
+        style="display:none;"
+    >
+
+        <p class="progress-text">
+            Scanning in progress...
         </p>
 
-        <form action="/scan" method="POST">
+        <div class="progress-bar">
 
-            <input
+            <div
+                class="progress-fill"
+                id="progress-fill"
+            ></div>
 
-                type="text"
+        </div>
 
-                name="target"
-
-                placeholder="Enter Target IP"
-
-                required
-
-            >
-
-            <input
-
-                type="number"
-
-                name="start_port"
-
-                placeholder="Start Port"
-
-                required
-
-            >
-
-            <input
-
-                type="number"
-
-                name="end_port"
-
-                placeholder="End Port"
-
-                required
-
-            >
-
-            <button type="submit">
-
-                Start Scan
-
-            </button>
-
-        </form>
+        <p id="progress-percentage">
+            0%
+        </p>
 
     </div>
+
+</div>
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+<script>
+
+    function startProgress() {
+
+        const container =
+            document.getElementById("progress-container");
+
+        const bar =
+            document.getElementById("progress-fill");
+
+        const percentage =
+            document.getElementById("progress-percentage");
+
+        container.style.display = "block";
+
+        let progress = 0;
+
+        let interval = setInterval(() => {
+
+            progress += 5;
+
+            bar.style.width = progress + "%";
+
+            percentage.innerText = progress + "%";
+
+            if (progress >= 90) {
+                clearInterval(interval);
+            }
+
+        }, 300);
+    }
+
+</script>
+
 
 </body>
 
