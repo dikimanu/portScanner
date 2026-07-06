@@ -1,126 +1,76 @@
-from flask import (
-
-    Flask,
-    render_template,
-    request,
-    send_file
-
-)
-
+from flask import Flask, render_template, request, send_file
 from scanner_engine import run_scan
-
-from report_generator import (
-
-    save_csv_report,
-    save_txt_report
-
-)
-
+from report_generator import save_csv_report, save_txt_report
 
 app = Flask(__name__)
 
 
-# Home Page
+# -------------------------
+# HOME PAGE
+# -------------------------
 @app.route("/")
-
 def home():
-
-    return render_template(
-
-        "index.html"
-
-    )
+    return render_template("index.html")
 
 
-# Scan Route
-@app.route(
-
-    "/scan",
-
-    methods=["POST"]
-
-)
-
+# -------------------------
+# SCAN ROUTE
+# -------------------------
+@app.route("/scan", methods=["POST"])
 def scan():
 
-    target = request.form["target"]
+    # Get user input
+    target = request.form.get("target", "").strip()
+    start_port = int(request.form.get("start_port", 1))
+    end_port = int(request.form.get("end_port", 1024))
 
-    start_port = int(
+    # Basic validation (important for stability)
+    if not target:
+        return "Invalid Target IP", 400
 
-        request.form["start_port"]
+    if start_port < 1 or end_port > 65535 or start_port > end_port:
+        return "Invalid Port Range", 400
 
-    )
+    # Run scan engine
+    scan_data = run_scan(target, start_port, end_port)
 
-    end_port = int(
+    # Save full results (OPEN + CLOSED + FILTERED)
+    save_csv_report(scan_data["all_results"])
+    save_txt_report(scan_data)
 
-        request.form["end_port"]
-
-    )
-
-    # Run Scanner
-    scan_data = run_scan(
-
-        target,
-        start_port,
-        end_port
-
-    )
-
-    # Generate Reports
-    save_csv_report(
-
-        scan_data["open_ports"]
-
-    )
-
-    save_txt_report(
-
-        scan_data
-
-    )
-
-    return render_template(
-
-        "results.html",
-
-        data=scan_data
-
-    )
+    return render_template("results.html", data=scan_data)
 
 
-# Download CSV
+# -------------------------
+# DOWNLOAD CSV
+# -------------------------
 @app.route("/download/csv")
-
 def download_csv():
-
     return send_file(
-
         "reports/scan_report.csv",
-
         as_attachment=True
-
     )
 
 
-# Download TXT
+# -------------------------
+# DOWNLOAD TXT
+# -------------------------
 @app.route("/download/txt")
-
 def download_txt():
-
     return send_file(
-
         "reports/scan_report.txt",
-
         as_attachment=True
-
     )
 
 
-# Run Flask App
+# -------------------------
+# RUN SERVER (LAN READY)
+# -------------------------
 if __name__ == "__main__":
 
+    # IMPORTANT: allows access from other devices in LAN
     app.run(
-
+        host="0.0.0.0",
+        port=5000,
         debug=True
-
     )

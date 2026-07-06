@@ -1,172 +1,100 @@
 import socket
 import time
-
 from concurrent.futures import ThreadPoolExecutor
 
 from services import services
 from analyzer import security_analysis
 
+# =========================
+# GLOBAL RESULT STORE
+# =========================
+results = []
 
-# Store Open Ports
-open_ports = []
 
-
-# Scan Single Port
+# =========================
+# SCAN SINGLE PORT
+# =========================
 def scan_port(target, port):
 
+    status = "CLOSED"
+
     try:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(0.8)
 
-        scanner = socket.socket(
+        result = sock.connect_ex((target, port))
 
-            socket.AF_INET,
-            socket.SOCK_STREAM
-
-        )
-
-        scanner.settimeout(1)
-
-        result = scanner.connect_ex(
-
-            (target, port)
-
-        )
-
+        # OPEN PORT
         if result == 0:
+            status = "OPEN"
 
-            service_name = services.get(
+        # FILTERED (timeout-like behavior)
+        elif result != 0:
+            status = "CLOSED"
 
-                port,
-                "Unknown Service"
-
-            )
-
-            analysis = security_analysis.get(port)
-
-            if analysis:
-
-                risk_level = analysis["risk_level"]
-
-                purpose = analysis["purpose"]
-
-                risk = analysis["risk"]
-
-                recommendation = (
-
-                    analysis["recommendation"]
-
-                )
-
-            else:
-
-                risk_level = "UNKNOWN"
-
-                purpose = (
-                    "Unknown Service"
-                )
-
-                risk = (
-                    "Unknown security risk."
-                )
-
-                recommendation = (
-                    "Investigate manually."
-                )
-
-            open_ports.append({
-
-                "port": port,
-                "service": service_name,
-                "status": "OPEN",
-                "risk_level": risk_level,
-                "purpose": purpose,
-                "risk": risk,
-                "recommendation": recommendation
-
-            })
-
-        scanner.close()
+        sock.close()
 
     except:
+        status = "FILTERED"
 
-        pass
+    service = services.get(port, "Unknown Service")
+
+    analysis = security_analysis.get(port, {
+        "risk_level": "UNKNOWN",
+        "purpose": "Unknown Service",
+        "risk": "Unknown risk",
+        "recommendation": "Investigate manually"
+    })
+
+    results.append({
+        "port": port,
+        "service": service,
+        "status": status,
+        "risk_level": analysis["risk_level"],
+        "purpose": analysis["purpose"],
+        "risk": analysis["risk"],
+        "recommendation": analysis["recommendation"]
+    })
 
 
-# Main Scan Function
-def run_scan(
+# =========================
+# MAIN SCAN FUNCTION
+# =========================
+def run_scan(target, start_port, end_port):
 
-    target,
-    start_port,
-    end_port
+    global results
+    results = []
 
-):
-
-    global open_ports
-
-    open_ports = []
-
-    # Start Time
     start_time = time.time()
 
-    # Hostname
     try:
-
-        hostname = socket.gethostbyaddr(
-
-            target
-
-        )[0]
-
+        hostname = socket.gethostbyaddr(target)[0]
     except:
-
         hostname = "Hostname Not Found"
 
+    with ThreadPoolExecutor(max_workers=100) as executor:
+        for port in range(start_port, end_port + 1):
+            executor.submit(scan_port, target, port)
 
-    # Multithreaded Scan
-    with ThreadPoolExecutor(
-
-        max_workers=100
-
-    ) as executor:
-
-        for port in range(
-
-            start_port,
-            end_port + 1
-
-        ):
-
-            executor.submit(
-
-                scan_port,
-                target,
-                port
-
-            )
-
-
-    # End Time
     end_time = time.time()
 
-    duration = round(
-
-        end_time - start_time,
-        2
-
-    )
+    open_ports = [p for p in results if p["status"] == "OPEN"]
+    closed_ports = [p for p in results if p["status"] == "CLOSED"]
+    filtered_ports = [p for p in results if p["status"] == "FILTERED"]
 
     return {
-
         "target": target,
-
         "hostname": hostname,
-
         "start_port": start_port,
-
         "end_port": end_port,
+        "duration": round(end_time - start_time, 2),
 
-        "duration": duration,
+        "open_ports": open_ports,
+        "all_results": results,
 
-        "open_ports": open_ports
-
+        "summary": {
+            "open": len(open_ports),
+            "closed": len(closed_ports),
+            "filtered": len(filtered_ports)
+        }
     }
-

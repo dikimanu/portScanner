@@ -1,39 +1,73 @@
-==================================================
+============================================================
 NETWORK PORT SCAN REPORT
-==================================================
+============================================================
 
-Scan Date : 2026-07-06 16:53:08.726243
+Scan Date : 2026-07-06 21:21:09.521749
 
 TARGET INFORMATION
---------------------------------------------------
-Target IP : 192.168.56.1
-Hostname : ORG-DKMNU-COMPNY-DESKTOP-7BHHFD
-Port Range : 1 - 500
-Scan Duration : 5.12 seconds
+------------------------------------------------------------
+Target IP   : 192.168.56.1
+Hostname    : ORG-DKMNU-COMPNY-DESKTOP-7BHHFD
+Port Range  : 120 - 150
+Duration    : 6.31 seconds
+
+SCAN SUMMARY
+------------------------------------------------------------
+Open Ports     : 2
+Closed Ports   : 29
+Filtered Ports : 0
+Total Scanned  : 31
 
 OPEN PORTS
---------------------------------------------------
+------------------------------------------------------------
 Port 135 --> RPC --> OPEN
 Port 139 --> SMB --> OPEN
-Port 445 --> SMB --> OPEN
+
+DETAILED PORT STATUS
+------------------------------------------------------------
+Port 135 --> RPC --> OPEN
+Port 137 --> NetBIOS --> CLOSED
+Port 139 --> SMB --> OPEN
+Port 123 --> NTP --> CLOSED
+Port 124 --> Unknown Service --> CLOSED
+Port 125 --> Unknown Service --> CLOSED
+Port 122 --> Unknown Service --> CLOSED
+Port 120 --> Unknown Service --> CLOSED
+Port 121 --> Unknown Service --> CLOSED
+Port 128 --> Unknown Service --> CLOSED
+Port 130 --> Unknown Service --> CLOSED
+Port 132 --> Unknown Service --> CLOSED
+Port 131 --> Unknown Service --> CLOSED
+Port 129 --> Unknown Service --> CLOSED
+Port 127 --> Unknown Service --> CLOSED
+Port 140 --> Unknown Service --> CLOSED
+Port 126 --> Unknown Service --> CLOSED
+Port 138 --> NetBIOS --> CLOSED
+Port 133 --> Unknown Service --> CLOSED
+Port 134 --> Unknown Service --> CLOSED
+Port 136 --> Unknown Service --> CLOSED
+Port 142 --> Unknown Service --> CLOSED
+Port 146 --> Unknown Service --> CLOSED
+Port 149 --> Unknown Service --> CLOSED
+Port 150 --> Unknown Service --> CLOSED
+Port 143 --> IMAP --> CLOSED
+Port 145 --> Unknown Service --> CLOSED
+Port 148 --> Unknown Service --> CLOSED
+Port 141 --> Unknown Service --> CLOSED
+Port 147 --> Unknown Service --> CLOSED
+Port 144 --> Unknown Service --> CLOSED
 
 SECURITY ANALYSIS
---------------------------------------------------
+------------------------------------------------------------
 
 Port 135 (RPC)
-Purpose : Remote Procedure Call service used by Windows.
-Risk Level : HIGH
-Risk : RPC services may be exploited for remote code execution.
+Purpose        : Remote Procedure Call service used by Windows.
+Risk Level     : HIGH
+Risk           : RPC services may be exploited for remote code execution.
 Recommendation : Restrict RPC access using firewalls and keep systems updated.
 
 Port 139 (SMB)
-Purpose : Windows file sharing service.
-Risk Level : HIGH
-Risk : SMB vulnerabilities may expose shared resources.
+Purpose        : Windows file sharing service.
+Risk Level     : HIGH
+Risk           : SMB vulnerabilities may expose shared resources.
 Recommendation : Disable SMBv1 and restrict access.
-
-Port 445 (SMB)
-Purpose : File and printer sharing service used in Windows.
-Risk Level : HIGH
-Risk : SMB vulnerabilities may allow unauthorized access or ransomware attacks.
-Recommendation : Disable SMBv1, restrict access, and apply security patches.

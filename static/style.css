@@ -1,98 +1,79 @@
 body {
 
     background-color: #0f172a;
-
     color: white;
-
     font-family: Arial, sans-serif;
-
     margin: 0;
-
     padding: 0;
 
 }
 
 
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .container {
 
-    width: 80%;
-
+    width: 85%;
     margin: auto;
-
     margin-top: 40px;
 
 }
 
+
+/* =========================
+   HEADINGS
+========================= */
 
 h1 {
 
     color: #38bdf8;
-
     text-align: center;
 
 }
 
-
 h2 {
 
     color: #22c55e;
-
     margin-top: 40px;
 
 }
 
 
-p {
-
-    font-size: 16px;
-
-}
-
+/* =========================
+   FORM
+========================= */
 
 form {
 
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
     margin-top: 30px;
 
 }
 
-
 input {
 
     padding: 12px;
-
     border: none;
-
     border-radius: 5px;
-
     font-size: 16px;
 
 }
-
 
 button {
 
     background-color: #38bdf8;
-
     color: white;
-
     border: none;
-
     padding: 12px;
-
     border-radius: 5px;
-
     font-size: 16px;
-
     cursor: pointer;
 
 }
-
 
 button:hover {
 
@@ -101,96 +82,146 @@ button:hover {
 }
 
 
-table {
+/* =========================
+   INFO BOX
+========================= */
 
-    width: 100%;
+.info-box {
 
-    border-collapse: collapse;
-
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
     margin-top: 20px;
 
 }
 
 
-table, th, td {
+/* =========================
+   TABLE
+========================= */
 
-    border: 1px solid white;
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
 
 }
-
 
 th {
 
-    background-color: #1e293b;
-
+    background-color: #0f172a;
     padding: 12px;
+    color: #38bdf8;
 
 }
-
 
 td {
 
     padding: 12px;
-
     text-align: center;
 
 }
 
 
-.info-box {
+/* =========================
+   STATUS COLORS (IMPORTANT)
+========================= */
 
-    background-color: #1e293b;
+.status-open {
 
-    padding: 20px;
-
-    border-radius: 10px;
-
-    margin-top: 20px;
+    color: #22c55e;
+    font-weight: bold;
 
 }
 
+.status-closed {
+
+    color: #ef4444;
+    font-weight: bold;
+
+}
+
+.status-filtered {
+
+    color: #f59e0b;
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   ANALYSIS BOX
+========================= */
 
 .analysis-box {
 
     background-color: #1e293b;
-
     padding: 20px;
-
     border-radius: 10px;
-
     margin-top: 20px;
 
 }
 
 
+/* =========================
+   DOWNLOAD BUTTONS
+========================= */
+
 .download-buttons {
 
     margin-top: 40px;
-
     display: flex;
-
     gap: 20px;
 
 }
 
-
 .download-buttons a {
 
     background-color: #22c55e;
-
     color: white;
-
     text-decoration: none;
-
     padding: 12px 20px;
-
     border-radius: 5px;
 
 }
 
-
 .download-buttons a:hover {
 
     background-color: #15803d;
+
+}
+
+
+/* =========================
+   FILTER BUTTONS (NEW)
+========================= */
+
+.filter-buttons {
+
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+.filter-buttons button {
+
+    background-color: #334155;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.filter-buttons button:hover {
+
+    background-color: #475569;
 
 }
