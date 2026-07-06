@@ -1,0 +1,46 @@
+==================================================
+NETWORK PORT SCAN REPORT
+==================================================
+
+Scan Date : 2026-07-06 16:04:47.630787
+
+TARGET INFORMATION
+--------------------------------------------------
+Target IP : 127.0.0.1
+Hostname : ORG-DKMNU-COMPNY-DESKTOP-7BHHFD
+Port Range : 1 - 5000
+Scan Duration : 25.61 seconds
+
+OPEN PORTS
+--------------------------------------------------
+Port 135 --> RPC --> OPEN
+Port 445 --> SMB --> OPEN
+Port 4709 --> Unknown Service --> OPEN
+Port 5000 --> Unknown Service --> OPEN
+
+SECURITY ANALYSIS
+--------------------------------------------------
+
+Port 135 (RPC)
+Purpose : Remote Procedure Call service used by Windows.
+Risk Level : HIGH
+Risk : RPC services may be exploited for remote code execution.
+Recommendation : Restrict RPC access using firewalls and keep systems updated.
+
+Port 445 (SMB)
+Purpose : File and printer sharing service used in Windows.
+Risk Level : HIGH
+Risk : SMB vulnerabilities may allow unauthorized access or ransomware attacks.
+Recommendation : Disable SMBv1, restrict access, and apply security patches.
+
+Port 4709 (Unknown Service)
+Purpose : Unknown Service
+Risk Level : UNKNOWN
+Risk : Unknown security risk.
+Recommendation : Investigate manually.
+
+Port 5000 (Unknown Service)
+Purpose : Unknown Service
+Risk Level : UNKNOWN
+Risk : Unknown security risk.
+Recommendation : Investigate manually.

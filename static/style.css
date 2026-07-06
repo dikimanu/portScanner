@@ -1,0 +1,196 @@
+body {
+
+    background-color: #0f172a;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.container {
+
+    width: 80%;
+
+    margin: auto;
+
+    margin-top: 40px;
+
+}
+
+
+h1 {
+
+    color: #38bdf8;
+
+    text-align: center;
+
+}
+
+
+h2 {
+
+    color: #22c55e;
+
+    margin-top: 40px;
+
+}
+
+
+p {
+
+    font-size: 16px;
+
+}
+
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+
+input {
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+}
+
+
+button {
+
+    background-color: #38bdf8;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    background-color: #0284c7;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+}
+
+
+table, th, td {
+
+    border: 1px solid white;
+
+}
+
+
+th {
+
+    background-color: #1e293b;
+
+    padding: 12px;
+
+}
+
+
+td {
+
+    padding: 12px;
+
+    text-align: center;
+
+}
+
+
+.info-box {
+
+    background-color: #1e293b;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.analysis-box {
+
+    background-color: #1e293b;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.download-buttons {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.download-buttons a {
+
+    background-color: #22c55e;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+}
+
+
+.download-buttons a:hover {
+
+    background-color: #15803d;
+
+}

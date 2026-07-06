@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+
+        Scan Results
+
+    </title>
+
+    <link
+
+        rel="stylesheet"
+
+        href="{{ url_for('static', filename='style.css') }}"
+
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+
+            Scan Results
+
+        </h1>
+
+        <div class="info-box">
+
+            <p>
+
+                <strong>Target IP:</strong>
+
+                {{ data.target }}
+
+            </p>
+
+            <p>
+
+                <strong>Hostname:</strong>
+
+                {{ data.hostname }}
+
+            </p>
+
+            <p>
+
+                <strong>Port Range:</strong>
+
+                {{ data.start_port }}
+                -
+                {{ data.end_port }}
+
+            </p>
+
+            <p>
+
+                <strong>Scan Duration:</strong>
+
+                {{ data.duration }} seconds
+
+            </p>
+
+            <p>
+
+                <strong>Total Open Ports:</strong>
+
+                {{ data.open_ports|length }}
+
+            </p>
+
+        </div>
+
+        <h2>
+
+            Open Ports
+
+        </h2>
+
+        <table>
+
+            <tr>
+
+                <th>Port</th>
+
+                <th>Service</th>
+
+                <th>Status</th>
+
+                <th>Risk Level</th>
+
+            </tr>
+
+            {% for item in data.open_ports %}
+
+            <tr>
+
+                <td>
+
+                    {{ item.port }}
+
+                </td>
+
+                <td>
+
+                    {{ item.service }}
+
+                </td>
+
+                <td>
+
+                    {{ item.status }}
+
+                </td>
+
+                <td>
+
+                    {{ item.risk_level }}
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <h2>
+
+            Security Analysis
+
+        </h2>
+
+        {% for item in data.open_ports %}
+
+        <div class="analysis-box">
+
+            <h3>
+
+                Port {{ item.port }}
+                ({{ item.service }})
+
+            </h3>
+
+            <p>
+
+                <strong>Purpose:</strong>
+
+                {{ item.purpose }}
+
+            </p>
+
+            <p>
+
+                <strong>Risk:</strong>
+
+                {{ item.risk }}
+
+            </p>
+
+            <p>
+
+                <strong>Recommendation:</strong>
+
+                {{ item.recommendation }}
+
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="download-buttons">
+
+            <a href="/download/csv">
+
+                Download CSV Report
+
+            </a>
+
+            <a href="/download/txt">
+
+                Download TXT Report
+
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
