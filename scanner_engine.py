@@ -86,8 +86,7 @@ def scan_port(target, port):
 
         scanner.close()
 
-    except:
-
+    except OSError:
         pass
 
 
@@ -116,8 +115,7 @@ def run_scan(
 
         )[0]
 
-    except:
-
+    except OSError:
         hostname = "Hostname Not Found"
 
 
