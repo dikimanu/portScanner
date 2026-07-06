@@ -23,7 +23,7 @@ def scan_port(target, port):
 
         )
 
-        scanner.settimeout(0.5)
+        scanner.settimeout(1)
 
         result = scanner.connect_ex(
 
