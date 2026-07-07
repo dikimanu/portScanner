@@ -96,31 +96,35 @@
         </div>
 
         <button type="submit" id="scan-button">
-            Start Scan
+            <span id="scan-button-icon" class="scan-icon"></span>
+            <span id="scan-button-text">Start Scan</span>
         </button>
 
     </form>
 
     <!-- =========================
-         PROGRESS BAR
+         SCANNING ANIMATION
     ========================== -->
     <div
         id="progress-container"
         style="display:none;"
     >
 
-        <p class="progress-text">
-            Scanning in progress... this may take a moment depending on the port range
-        </p>
+        <div class="radar-box">
 
-        <div class="progress-bar">
+            <div class="radar-sweep"></div>
 
-            <div
-                class="progress-fill indeterminate"
-                id="progress-fill"
-            ></div>
+            <div class="radar-rings"></div>
 
         </div>
+
+        <p class="progress-text">
+            Scanning target<span class="dots"><span>.</span><span>.</span><span>.</span></span>
+        </p>
+
+        <p class="progress-subtext">
+            This may take a moment depending on the port range and engine selected
+        </p>
 
     </div>
 
@@ -139,11 +143,22 @@
         const button =
             document.getElementById("scan-button");
 
+        const buttonText =
+            document.getElementById("scan-button-text");
+
+        const buttonIcon =
+            document.getElementById("scan-button-icon");
+
         container.style.display = "block";
 
         // Prevent double-submitting while the scan is running
         button.disabled = true;
-        button.innerText = "Scanning...";
+        button.classList.add("scanning");
+        buttonText.innerText = "Scanning...";
+        buttonIcon.classList.add("spin");
+
+        // Smoothly scroll to the animation so the user sees it
+        container.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 
 </script>

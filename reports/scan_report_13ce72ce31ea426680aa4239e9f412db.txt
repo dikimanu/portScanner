@@ -1,0 +1,66 @@
+============================================================
+NETWORK PORT SCAN REPORT
+============================================================
+
+Scan Date : 2026-07-07 18:31:35.940852
+Scan Engine : Nmap
+
+TARGET INFORMATION
+------------------------------------------------------------
+Target IP   : 192.168.43.229
+Hostname    : ORG-DKMNU-COMPNY-DESKTOP-7BHHFD
+Port Range  : 130 - 150
+Duration    : 8.77 seconds
+
+SCAN SUMMARY
+------------------------------------------------------------
+Open Ports     : 2
+Closed Ports   : 18
+Filtered Ports : 1
+Total Scanned  : 21
+
+OPEN PORTS
+------------------------------------------------------------
+Port 135 --> RPC (Microsoft Windows RPC ) --> OPEN
+Port 139 --> SMB (Microsoft Windows netbios-ssn ) --> OPEN
+
+DETAILED PORT STATUS
+------------------------------------------------------------
+Port 130 --> cisco-fna --> CLOSED
+Port 131 --> cisco-tna --> CLOSED
+Port 132 --> cisco-sys --> CLOSED
+Port 133 --> statsrv --> CLOSED
+Port 134 --> ingres-net --> CLOSED
+Port 135 --> RPC --> OPEN
+Port 136 --> profile --> CLOSED
+Port 137 --> NetBIOS --> FILTERED
+Port 138 --> NetBIOS --> CLOSED
+Port 139 --> SMB --> OPEN
+Port 140 --> emfis-data --> CLOSED
+Port 141 --> emfis-cntl --> CLOSED
+Port 142 --> bl-idm --> CLOSED
+Port 143 --> IMAP --> CLOSED
+Port 144 --> news --> CLOSED
+Port 145 --> uaac --> CLOSED
+Port 146 --> iso-tp0 --> CLOSED
+Port 147 --> iso-ip --> CLOSED
+Port 148 --> cronus --> CLOSED
+Port 149 --> aed-512 --> CLOSED
+Port 150 --> sql-net --> CLOSED
+
+SECURITY ANALYSIS
+------------------------------------------------------------
+
+Port 135 (RPC)
+Detected  : Microsoft Windows RPC 
+Purpose        : Remote Procedure Call service used by Windows.
+Risk Level     : HIGH
+Risk           : RPC services may be exploited for remote code execution.
+Recommendation : Restrict RPC access using firewalls and keep systems updated.
+
+Port 139 (SMB)
+Detected  : Microsoft Windows netbios-ssn 
+Purpose        : Windows file sharing service.
+Risk Level     : HIGH
+Risk           : SMB vulnerabilities may expose shared resources.
+Recommendation : Disable SMBv1 and restrict access.
