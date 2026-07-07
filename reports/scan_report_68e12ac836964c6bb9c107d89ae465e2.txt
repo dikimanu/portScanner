@@ -1,0 +1,41 @@
+============================================================
+NETWORK PORT SCAN REPORT
+============================================================
+
+Scan Date : 2026-07-07 10:16:15.607869
+
+TARGET INFORMATION
+------------------------------------------------------------
+Target IP   : 10.0.2.15
+Hostname    : Hostname Not Found
+Port Range  : 1 - 11
+Duration    : 6.12 seconds
+
+SCAN SUMMARY
+------------------------------------------------------------
+Open Ports     : 0
+Closed Ports   : 11
+Filtered Ports : 0
+Total Scanned  : 11
+
+OPEN PORTS
+------------------------------------------------------------
+No Open Ports Found
+
+DETAILED PORT STATUS
+------------------------------------------------------------
+Port 1 --> Unknown Service --> CLOSED
+Port 2 --> Unknown Service --> CLOSED
+Port 3 --> Unknown Service --> CLOSED
+Port 4 --> Unknown Service --> CLOSED
+Port 5 --> Unknown Service --> CLOSED
+Port 6 --> Unknown Service --> CLOSED
+Port 7 --> Unknown Service --> CLOSED
+Port 8 --> Unknown Service --> CLOSED
+Port 9 --> Unknown Service --> CLOSED
+Port 10 --> Unknown Service --> CLOSED
+Port 11 --> Unknown Service --> CLOSED
+
+SECURITY ANALYSIS
+------------------------------------------------------------
+No open ports detected.

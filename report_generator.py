@@ -1,13 +1,16 @@
 import csv
+import os
 from datetime import datetime
 
 
 # =========================
 # CSV REPORT (ALL PORTS)
 # =========================
-def save_csv_report(all_results):
+def save_csv_report(all_results, scan_id="latest"):
 
-    path = "reports/scan_report.csv"
+    os.makedirs("reports", exist_ok=True)
+
+    path = f"reports/scan_report_{scan_id}.csv"
 
     with open(path, mode="w", newline="") as file:
 
@@ -35,9 +38,11 @@ def save_csv_report(all_results):
 # =========================
 # TXT REPORT (FULL REPORT)
 # =========================
-def save_txt_report(scan_data):
+def save_txt_report(scan_data, scan_id="latest"):
 
-    path = "reports/scan_report.txt"
+    os.makedirs("reports", exist_ok=True)
+
+    path = f"reports/scan_report_{scan_id}.txt"
 
     all_ports = scan_data.get("all_results", [])
 

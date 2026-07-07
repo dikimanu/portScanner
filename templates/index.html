@@ -42,6 +42,7 @@
          SCAN FORM
     ========================== -->
     <form
+        id="scan-form"
         action="/scan"
         method="POST"
         onsubmit="startProgress()"
@@ -68,7 +69,7 @@
             required
         >
 
-        <button type="submit">
+        <button type="submit" id="scan-button">
             Start Scan
         </button>
 
@@ -83,21 +84,17 @@
     >
 
         <p class="progress-text">
-            Scanning in progress...
+            Scanning in progress... this may take a moment depending on the port range
         </p>
 
         <div class="progress-bar">
 
             <div
-                class="progress-fill"
+                class="progress-fill indeterminate"
                 id="progress-fill"
             ></div>
 
         </div>
-
-        <p id="progress-percentage">
-            0%
-        </p>
 
     </div>
 
@@ -113,29 +110,14 @@
         const container =
             document.getElementById("progress-container");
 
-        const bar =
-            document.getElementById("progress-fill");
-
-        const percentage =
-            document.getElementById("progress-percentage");
+        const button =
+            document.getElementById("scan-button");
 
         container.style.display = "block";
 
-        let progress = 0;
-
-        let interval = setInterval(() => {
-
-            progress += 5;
-
-            bar.style.width = progress + "%";
-
-            percentage.innerText = progress + "%";
-
-            if (progress >= 90) {
-                clearInterval(interval);
-            }
-
-        }, 300);
+        // Prevent double-submitting while the scan is running
+        button.disabled = true;
+        button.innerText = "Scanning...";
     }
 
 </script>

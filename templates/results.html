@@ -28,14 +28,16 @@
         <p><strong>Total Filtered Ports:</strong> {{ data.summary.filtered }}</p>
 
     </div>
-<div class="filter-buttons">
 
-    <button onclick="filterTable('ALL')">All</button>
-    <button onclick="filterTable('OPEN')">Open</button>
-    <button onclick="filterTable('CLOSED')">Closed</button>
-    <button onclick="filterTable('FILTERED')">Filtered</button>
+    <div class="filter-buttons">
 
-</div>
+        <button onclick="filterTable('ALL')">All</button>
+        <button onclick="filterTable('OPEN')">Open</button>
+        <button onclick="filterTable('CLOSED')">Closed</button>
+        <button onclick="filterTable('FILTERED')">Filtered</button>
+
+    </div>
+
     <!-- ===================== FULL SCAN TABLE ===================== -->
     <h2>All Scan Results</h2>
 
@@ -58,19 +60,35 @@
             <td>
 
                 {% if item.status == "OPEN" %}
-                    <span style="color:green;"><b>{{ item.status }}</b></span>
+                    <span class="status-open">{{ item.status }}</span>
 
                 {% elif item.status == "CLOSED" %}
-                    <span style="color:red;"><b>{{ item.status }}</b></span>
+                    <span class="status-closed">{{ item.status }}</span>
 
                 {% else %}
-                    <span style="color:orange;"><b>{{ item.status }}</b></span>
+                    <span class="status-filtered">{{ item.status }}</span>
 
                 {% endif %}
 
             </td>
 
-            <td>{{ item.risk_level }}</td>
+            <td>
+
+                {% if item.risk_level == "HIGH" %}
+                    <span class="high-risk">{{ item.risk_level }}</span>
+
+                {% elif item.risk_level == "MEDIUM" %}
+                    <span class="medium-risk">{{ item.risk_level }}</span>
+
+                {% elif item.risk_level == "LOW" %}
+                    <span class="low-risk">{{ item.risk_level }}</span>
+
+                {% else %}
+                    <span>{{ item.risk_level }}</span>
+
+                {% endif %}
+
+            </td>
 
         </tr>
 
@@ -81,19 +99,29 @@
     <!-- ===================== SECURITY ANALYSIS ===================== -->
     <h2>Security Analysis (Open Ports)</h2>
 
-    {% for item in data.open_ports %}
+    {% if data.open_ports %}
 
-    <div class="analysis-box">
+        {% for item in data.open_ports %}
 
-        <h3>Port {{ item.port }} ({{ item.service }})</h3>
+        <div class="analysis-box">
 
-        <p><strong>Purpose:</strong> {{ item.purpose }}</p>
-        <p><strong>Risk:</strong> {{ item.risk }}</p>
-        <p><strong>Recommendation:</strong> {{ item.recommendation }}</p>
+            <h3>Port {{ item.port }} ({{ item.service }})</h3>
 
-    </div>
+            <p><strong>Purpose:</strong> {{ item.purpose }}</p>
+            <p><strong>Risk:</strong> {{ item.risk }}</p>
+            <p><strong>Recommendation:</strong> {{ item.recommendation }}</p>
 
-    {% endfor %}
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="info-box">
+            <p>No open ports were found in this scan range.</p>
+        </div>
+
+    {% endif %}
 
     <!-- ===================== DOWNLOAD ===================== -->
     <div class="download-buttons">

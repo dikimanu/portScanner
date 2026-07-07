@@ -2,14 +2,14 @@
 NETWORK PORT SCAN REPORT
 ============================================================
 
-Scan Date : 2026-07-07 09:54:59.704578
+Scan Date : 2026-07-07 10:07:52.356190
 
 TARGET INFORMATION
 ------------------------------------------------------------
 Target IP   : 127.0.0.1
 Hostname    : ORG-DKMNU-COMPNY-DESKTOP-7BHHFD
 Port Range  : 130 - 140
-Duration    : 0.81 seconds
+Duration    : 1.04 seconds
 
 SCAN SUMMARY
 ------------------------------------------------------------
@@ -24,17 +24,17 @@ Port 135 --> RPC --> OPEN
 
 DETAILED PORT STATUS
 ------------------------------------------------------------
-Port 135 --> RPC --> OPEN
-Port 137 --> NetBIOS --> CLOSED
-Port 136 --> Unknown Service --> CLOSED
-Port 133 --> Unknown Service --> CLOSED
-Port 139 --> SMB --> CLOSED
-Port 138 --> NetBIOS --> CLOSED
-Port 132 --> Unknown Service --> CLOSED
-Port 134 --> Unknown Service --> CLOSED
-Port 131 --> Unknown Service --> CLOSED
-Port 140 --> Unknown Service --> CLOSED
 Port 130 --> Unknown Service --> CLOSED
+Port 131 --> Unknown Service --> CLOSED
+Port 132 --> Unknown Service --> CLOSED
+Port 133 --> Unknown Service --> CLOSED
+Port 134 --> Unknown Service --> CLOSED
+Port 135 --> RPC --> OPEN
+Port 136 --> Unknown Service --> CLOSED
+Port 137 --> NetBIOS --> CLOSED
+Port 138 --> NetBIOS --> CLOSED
+Port 139 --> SMB --> CLOSED
+Port 140 --> Unknown Service --> CLOSED
 
 SECURITY ANALYSIS
 ------------------------------------------------------------

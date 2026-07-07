@@ -1,40 +1,33 @@
 import socket
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from services import services
 from analyzer import security_analysis
-
-# =========================
-# GLOBAL RESULT STORE
-# =========================
-results = []
 
 
 # =========================
 # SCAN SINGLE PORT
 # =========================
-def scan_port(target, port):
+def scan_port(ip, port, timeout=1.0):
 
     status = "CLOSED"
 
     try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(0.8)
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.settimeout(timeout)
 
-        result = sock.connect_ex((target, port))
+            result = sock.connect_ex((ip, port))
 
-        # OPEN PORT
-        if result == 0:
-            status = "OPEN"
+            # 0 = connection succeeded -> port is OPEN
+            # non-zero (e.g. connection refused) -> port is CLOSED
+            status = "OPEN" if result == 0 else "CLOSED"
 
-        # FILTERED (timeout-like behavior)
-        elif result != 0:
-            status = "CLOSED"
+    except socket.timeout:
+        # No response at all -> firewall/filter dropping packets
+        status = "FILTERED"
 
-        sock.close()
-
-    except:
+    except Exception:
         status = "FILTERED"
 
     service = services.get(port, "Unknown Service")
@@ -46,7 +39,7 @@ def scan_port(target, port):
         "recommendation": "Investigate manually"
     })
 
-    results.append({
+    return {
         "port": port,
         "service": service,
         "status": status,
@@ -54,7 +47,7 @@ def scan_port(target, port):
         "purpose": analysis["purpose"],
         "risk": analysis["risk"],
         "recommendation": analysis["recommendation"]
-    })
+    }
 
 
 # =========================
@@ -62,19 +55,44 @@ def scan_port(target, port):
 # =========================
 def run_scan(target, start_port, end_port):
 
-    global results
-    results = []
-
     start_time = time.time()
 
+    # Resolve target (hostname or IP) to a single IP address up front.
+    # This also validates the target early: bad input fails fast here
+    # instead of causing every single port scan to error out silently.
     try:
-        hostname = socket.gethostbyaddr(target)[0]
-    except:
+        ip = socket.gethostbyname(target)
+    except socket.gaierror:
+        return {
+            "target": target,
+            "hostname": "Could not resolve target",
+            "start_port": start_port,
+            "end_port": end_port,
+            "duration": 0,
+            "open_ports": [],
+            "all_results": [],
+            "summary": {"open": 0, "closed": 0, "filtered": 0},
+            "error": f"Could not resolve target '{target}'. Check the IP or hostname."
+        }
+
+    try:
+        hostname = socket.gethostbyaddr(ip)[0]
+    except Exception:
         hostname = "Hostname Not Found"
 
+    results = []
+
     with ThreadPoolExecutor(max_workers=100) as executor:
-        for port in range(start_port, end_port + 1):
-            executor.submit(scan_port, target, port)
+        futures = [
+            executor.submit(scan_port, ip, port)
+            for port in range(start_port, end_port + 1)
+        ]
+
+        for future in as_completed(futures):
+            results.append(future.result())
+
+    # keep ports in ascending order (as_completed finishes out of order)
+    results.sort(key=lambda r: r["port"])
 
     end_time = time.time()
 
