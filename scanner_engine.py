@@ -114,5 +114,8 @@ def run_scan(target, start_port, end_port):
             "open": len(open_ports),
             "closed": len(closed_ports),
             "filtered": len(filtered_ports)
+        },
+
+        "engine": "custom"
         }
-    }
+    

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file, session
 from scanner_engine import run_scan
+from nmap_scanner import run_nmap_scan
 from report_generator import save_csv_report, save_txt_report
 import os
 import re
@@ -36,6 +37,7 @@ def home():
 def scan():
 
     target = request.form.get("target", "").strip()
+    engine = request.form.get("engine", "custom")  # "custom" or "nmap"
 
     try:
         start_port = int(request.form.get("start_port", 1))
@@ -49,9 +51,13 @@ def scan():
     if start_port < 1 or end_port > 65535 or start_port > end_port:
         return render_template("error.html", message="Invalid Port Range"), 400
 
-    scan_data = run_scan(target, start_port, end_port)
+    if engine == "nmap":
+        scan_data = run_nmap_scan(target, start_port, end_port)
+    else:
+        scan_data = run_scan(target, start_port, end_port)
 
-    # target passed basic format validation but couldn't actually be resolved
+    # target passed basic format validation but couldn't actually be resolved,
+    # or the Nmap binary failed/was unreachable
     if scan_data.get("error"):
         return render_template("error.html", message=scan_data["error"]), 400
 

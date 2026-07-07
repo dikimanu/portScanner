@@ -510,3 +510,28 @@ RESPONSIVE DESIGN
   }
 
 }
+.engine-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.engine-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cbd5e1;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.engine-option input[type="radio"] {
+  width: auto;
+  padding: 0;
+  accent-color: #38bdf8;
+}

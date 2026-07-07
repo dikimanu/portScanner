@@ -12,25 +12,39 @@ def save_csv_report(all_results, scan_id="latest"):
 
     path = f"reports/scan_report_{scan_id}.csv"
 
+    # Show a Version column only if at least one result actually has version info
+    # (keeps the custom-scanner CSV unchanged, since it never sets this field)
+    show_version = any(item.get("version") for item in all_results)
+
     with open(path, mode="w", newline="") as file:
 
         writer = csv.writer(file)
 
-        writer.writerow([
-            "Port",
-            "Service",
-            "Status",
-            "Risk Level"
-        ])
+        header = ["Port", "Service"]
+        if show_version:
+            header.append("Version")
+        header += ["Status", "Risk Level"]
+
+        writer.writerow(header)
 
         for item in all_results:
 
-            writer.writerow([
+            row = [
                 item.get("port", ""),
-                item.get("service", ""),
+                item.get("service", "")
+            ]
+
+            if show_version:
+                product = item.get("product", "")
+                version = item.get("version", "")
+                row.append(f"{product} {version}".strip())
+
+            row += [
                 item.get("status", ""),
                 item.get("risk_level", "")
-            ])
+            ]
+
+            writer.writerow(row)
 
     return path
 
@@ -52,13 +66,16 @@ def save_txt_report(scan_data, scan_id="latest"):
         "filtered": 0
     })
 
+    engine = scan_data.get("engine", "custom")
+
     with open(path, "w") as file:
 
         file.write("=" * 60 + "\n")
         file.write("NETWORK PORT SCAN REPORT\n")
         file.write("=" * 60 + "\n\n")
 
-        file.write(f"Scan Date : {datetime.now()}\n\n")
+        file.write(f"Scan Date : {datetime.now()}\n")
+        file.write(f"Scan Engine : {engine.capitalize()}\n\n")
 
         # =========================
         # TARGET INFO
@@ -92,9 +109,13 @@ def save_txt_report(scan_data, scan_id="latest"):
 
         if open_ports:
             for item in open_ports:
+                version_info = ""
+                if item.get("product"):
+                    version_info = f" ({item.get('product')} {item.get('version', '')})".rstrip()
+
                 file.write(
                     f"Port {item.get('port')} --> "
-                    f"{item.get('service')} --> OPEN\n"
+                    f"{item.get('service')}{version_info} --> OPEN\n"
                 )
         else:
             file.write("No Open Ports Found\n")
@@ -128,6 +149,9 @@ def save_txt_report(scan_data, scan_id="latest"):
             for item in open_ports:
 
                 file.write(f"\nPort {item.get('port')} ({item.get('service')})\n")
+
+                if item.get("product"):
+                    file.write(f"Detected  : {item.get('product')} {item.get('version', '')}\n")
 
                 file.write(f"Purpose        : {item.get('purpose', 'N/A')}\n")
                 file.write(f"Risk Level     : {item.get('risk_level', 'UNKNOWN')}\n")

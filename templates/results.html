@@ -22,6 +22,7 @@
         <p><strong>Hostname:</strong> {{ data.hostname }}</p>
         <p><strong>Port Range:</strong> {{ data.start_port }} - {{ data.end_port }}</p>
         <p><strong>Scan Duration:</strong> {{ data.duration }} seconds</p>
+        <p><strong>Scan Engine:</strong> {{ data.engine|default("custom")|capitalize }}</p>
 
         <p><strong>Total Open Ports:</strong> {{ data.summary.open }}</p>
         <p><strong>Total Closed Ports:</strong> {{ data.summary.closed }}</p>
@@ -41,11 +42,18 @@
     <!-- ===================== FULL SCAN TABLE ===================== -->
     <h2>All Scan Results</h2>
 
+    {% set show_version = data.all_results|selectattr("version", "defined")|selectattr("version", "ne", "")|list|length > 0 %}
+
     <table>
 
         <tr>
             <th>Port</th>
             <th>Service</th>
+
+            {% if show_version %}
+                <th>Version</th>
+            {% endif %}
+
             <th>Status</th>
             <th>Risk Level</th>
         </tr>
@@ -56,6 +64,10 @@
 
             <td>{{ item.port }}</td>
             <td>{{ item.service }}</td>
+
+            {% if show_version %}
+                <td>{{ item.product }} {{ item.version }}</td>
+            {% endif %}
 
             <td>
 
@@ -105,7 +117,10 @@
 
         <div class="analysis-box">
 
-            <h3>Port {{ item.port }} ({{ item.service }})</h3>
+            <h3>
+                Port {{ item.port }} ({{ item.service }})
+                {% if item.product %} — {{ item.product }} {{ item.version }}{% endif %}
+            </h3>
 
             <p><strong>Purpose:</strong> {{ item.purpose }}</p>
             <p><strong>Risk:</strong> {{ item.risk }}</p>
@@ -132,7 +147,6 @@
     </div>
 
 </div>
-
 <script>
 
 function filterTable(status) {
@@ -141,11 +155,15 @@ function filterTable(status) {
 
     for (let i = 1; i < rows.length; i++) {
 
-        let cell = rows[i].children[2];
+        // Find the status cell by its span class instead of a fixed column index,
+        // since the Version column is inserted conditionally and shifts positions.
+        let statusSpan = rows[i].querySelector(
+            ".status-open, .status-closed, .status-filtered"
+        );
 
-        if (!cell) continue;
+        if (!statusSpan) continue;
 
-        let text = cell.innerText.trim().toUpperCase();
+        let text = statusSpan.innerText.trim().toUpperCase();
 
         if (status === "ALL") {
             rows[i].style.display = "";

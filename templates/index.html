@@ -69,6 +69,32 @@
             required
         >
 
+        <!-- =========================
+             ENGINE SELECTOR
+        ========================== -->
+        <div class="engine-selector">
+
+            <label class="engine-option">
+                <input
+                    type="radio"
+                    name="engine"
+                    value="custom"
+                    checked
+                >
+                Custom Scanner (faster)
+            </label>
+
+            <label class="engine-option">
+                <input
+                    type="radio"
+                    name="engine"
+                    value="nmap"
+                >
+                Nmap Scanner (accurate, slower, detects service versions)
+            </label>
+
+        </div>
+
         <button type="submit" id="scan-button">
             Start Scan
         </button>
