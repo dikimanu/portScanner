@@ -1,0 +1,41 @@
+============================================================
+NETWORK PORT SCAN REPORT
+============================================================
+
+Scan Date : 2026-07-08 10:10:46.806668
+Scan Engine : Nmap
+
+TARGET INFORMATION
+------------------------------------------------------------
+Target IP   : 127.0.0.1
+Hostname    : localhost
+Port Range  : 1 - 10
+Duration    : 1.32 seconds
+
+SCAN SUMMARY
+------------------------------------------------------------
+Open Ports     : 0
+Closed Ports   : 10
+Filtered Ports : 0
+Total Scanned  : 10
+
+OPEN PORTS
+------------------------------------------------------------
+No Open Ports Found
+
+DETAILED PORT STATUS
+------------------------------------------------------------
+Port 1 --> tcpmux --> CLOSED
+Port 2 --> compressnet --> CLOSED
+Port 3 --> compressnet --> CLOSED
+Port 4 -->  --> CLOSED
+Port 5 --> rje --> CLOSED
+Port 6 -->  --> CLOSED
+Port 7 --> echo --> CLOSED
+Port 8 -->  --> CLOSED
+Port 9 --> discard --> CLOSED
+Port 10 -->  --> CLOSED
+
+SECURITY ANALYSIS
+------------------------------------------------------------
+No open ports detected.
