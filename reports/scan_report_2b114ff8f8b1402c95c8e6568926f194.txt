@@ -1,0 +1,81 @@
+============================================================
+NETWORK PORT SCAN REPORT
+============================================================
+
+Scan Date : 2026-07-08 15:34:42.122436
+Scan Engine : Nmap
+
+TARGET INFORMATION
+------------------------------------------------------------
+Target IP   : 192.168.56.101
+Hostname    : Hostname Not Found
+Port Range  : 1 - 50
+Duration    : 7.35 seconds
+
+SCAN SUMMARY
+------------------------------------------------------------
+Open Ports     : 0
+Closed Ports   : 50
+Filtered Ports : 0
+Total Scanned  : 50
+
+OPEN PORTS
+------------------------------------------------------------
+No Open Ports Found
+
+DETAILED PORT STATUS
+------------------------------------------------------------
+Port 1 --> TCPMUX --> CLOSED
+Port 2 --> Unknown Service --> CLOSED
+Port 3 --> Unknown Service --> CLOSED
+Port 4 --> Unknown Service --> CLOSED
+Port 5 --> RJE --> CLOSED
+Port 6 --> Unknown Service --> CLOSED
+Port 7 --> ECHO --> CLOSED
+Port 8 --> Unknown Service --> CLOSED
+Port 9 --> DISCARD --> CLOSED
+Port 10 --> Unknown Service --> CLOSED
+Port 11 --> SYSTAT --> CLOSED
+Port 12 --> Unknown Service --> CLOSED
+Port 13 --> DAYTIME --> CLOSED
+Port 14 --> Unknown Service --> CLOSED
+Port 15 --> Unknown Service --> CLOSED
+Port 16 --> Unknown Service --> CLOSED
+Port 17 --> QOTD --> CLOSED
+Port 18 --> MSP --> CLOSED
+Port 19 --> CHARGEN --> CLOSED
+Port 20 --> FTP Data --> CLOSED
+Port 21 --> FTP --> CLOSED
+Port 22 --> SSH --> CLOSED
+Port 23 --> Telnet --> CLOSED
+Port 24 --> Unknown Service --> CLOSED
+Port 25 --> SMTP --> CLOSED
+Port 26 --> Unknown Service --> CLOSED
+Port 27 --> Unknown Service --> CLOSED
+Port 28 --> Unknown Service --> CLOSED
+Port 29 --> Unknown Service --> CLOSED
+Port 30 --> Unknown Service --> CLOSED
+Port 31 --> Unknown Service --> CLOSED
+Port 32 --> Unknown Service --> CLOSED
+Port 33 --> Unknown Service --> CLOSED
+Port 34 --> Unknown Service --> CLOSED
+Port 35 --> Unknown Service --> CLOSED
+Port 36 --> Unknown Service --> CLOSED
+Port 37 --> TIME --> CLOSED
+Port 38 --> Unknown Service --> CLOSED
+Port 39 --> Unknown Service --> CLOSED
+Port 40 --> Unknown Service --> CLOSED
+Port 41 --> Unknown Service --> CLOSED
+Port 42 --> WINS --> CLOSED
+Port 43 --> WHOIS --> CLOSED
+Port 44 --> Unknown Service --> CLOSED
+Port 45 --> Unknown Service --> CLOSED
+Port 46 --> Unknown Service --> CLOSED
+Port 47 --> Unknown Service --> CLOSED
+Port 48 --> Unknown Service --> CLOSED
+Port 49 --> TACACS --> CLOSED
+Port 50 --> Unknown Service --> CLOSED
+
+SECURITY ANALYSIS
+------------------------------------------------------------
+No open ports detected.

@@ -1,0 +1,600 @@
+============================================================
+NETWORK PORT SCAN REPORT
+============================================================
+
+Scan Date : 2026-07-08 15:32:13.079897
+Scan Engine : Nmap
+
+TARGET INFORMATION
+------------------------------------------------------------
+Target IP   : 192.168.56.102
+Hostname    : METASPLOITABLE
+Port Range  : 1 - 500
+Duration    : 18.68 seconds
+
+SCAN SUMMARY
+------------------------------------------------------------
+Open Ports     : 9
+Closed Ports   : 491
+Filtered Ports : 0
+Total Scanned  : 500
+
+OPEN PORTS
+------------------------------------------------------------
+Port 21 --> FTP (vsftpd 2.3.4) --> OPEN
+Port 22 --> SSH (OpenSSH 4.7p1 Debian 8ubuntu1) --> OPEN
+Port 23 --> Telnet (Linux telnetd ) --> OPEN
+Port 25 --> SMTP (Postfix smtpd ) --> OPEN
+Port 53 --> DNS (ISC BIND 9.4.2) --> OPEN
+Port 80 --> HTTP (Apache httpd 2.2.8) --> OPEN
+Port 111 --> RPCBIND --> OPEN
+Port 139 --> NetBIOS Session Service (Samba smbd 3.X - 4.X) --> OPEN
+Port 445 --> SMB (Samba smbd 3.X - 4.X) --> OPEN
+
+DETAILED PORT STATUS
+------------------------------------------------------------
+Port 1 --> TCPMUX --> CLOSED
+Port 2 --> Unknown Service --> CLOSED
+Port 3 --> Unknown Service --> CLOSED
+Port 4 --> Unknown Service --> CLOSED
+Port 5 --> RJE --> CLOSED
+Port 6 --> Unknown Service --> CLOSED
+Port 7 --> ECHO --> CLOSED
+Port 8 --> Unknown Service --> CLOSED
+Port 9 --> DISCARD --> CLOSED
+Port 10 --> Unknown Service --> CLOSED
+Port 11 --> SYSTAT --> CLOSED
+Port 12 --> Unknown Service --> CLOSED
+Port 13 --> DAYTIME --> CLOSED
+Port 14 --> Unknown Service --> CLOSED
+Port 15 --> Unknown Service --> CLOSED
+Port 16 --> Unknown Service --> CLOSED
+Port 17 --> QOTD --> CLOSED
+Port 18 --> MSP --> CLOSED
+Port 19 --> CHARGEN --> CLOSED
+Port 20 --> FTP Data --> CLOSED
+Port 21 --> FTP --> OPEN
+Port 22 --> SSH --> OPEN
+Port 23 --> Telnet --> OPEN
+Port 24 --> Unknown Service --> CLOSED
+Port 25 --> SMTP --> OPEN
+Port 26 --> Unknown Service --> CLOSED
+Port 27 --> Unknown Service --> CLOSED
+Port 28 --> Unknown Service --> CLOSED
+Port 29 --> Unknown Service --> CLOSED
+Port 30 --> Unknown Service --> CLOSED
+Port 31 --> Unknown Service --> CLOSED
+Port 32 --> Unknown Service --> CLOSED
+Port 33 --> Unknown Service --> CLOSED
+Port 34 --> Unknown Service --> CLOSED
+Port 35 --> Unknown Service --> CLOSED
+Port 36 --> Unknown Service --> CLOSED
+Port 37 --> TIME --> CLOSED
+Port 38 --> Unknown Service --> CLOSED
+Port 39 --> Unknown Service --> CLOSED
+Port 40 --> Unknown Service --> CLOSED
+Port 41 --> Unknown Service --> CLOSED
+Port 42 --> WINS --> CLOSED
+Port 43 --> WHOIS --> CLOSED
+Port 44 --> Unknown Service --> CLOSED
+Port 45 --> Unknown Service --> CLOSED
+Port 46 --> Unknown Service --> CLOSED
+Port 47 --> Unknown Service --> CLOSED
+Port 48 --> Unknown Service --> CLOSED
+Port 49 --> TACACS --> CLOSED
+Port 50 --> Unknown Service --> CLOSED
+Port 51 --> Unknown Service --> CLOSED
+Port 52 --> Unknown Service --> CLOSED
+Port 53 --> DNS --> OPEN
+Port 54 --> Unknown Service --> CLOSED
+Port 55 --> Unknown Service --> CLOSED
+Port 56 --> Unknown Service --> CLOSED
+Port 57 --> Unknown Service --> CLOSED
+Port 58 --> Unknown Service --> CLOSED
+Port 59 --> Unknown Service --> CLOSED
+Port 60 --> Unknown Service --> CLOSED
+Port 61 --> Unknown Service --> CLOSED
+Port 62 --> Unknown Service --> CLOSED
+Port 63 --> Unknown Service --> CLOSED
+Port 64 --> Unknown Service --> CLOSED
+Port 65 --> Unknown Service --> CLOSED
+Port 66 --> Unknown Service --> CLOSED
+Port 67 --> DHCP Server --> CLOSED
+Port 68 --> DHCP Client --> CLOSED
+Port 69 --> TFTP --> CLOSED
+Port 70 --> Gopher --> CLOSED
+Port 71 --> Unknown Service --> CLOSED
+Port 72 --> Unknown Service --> CLOSED
+Port 73 --> Unknown Service --> CLOSED
+Port 74 --> Unknown Service --> CLOSED
+Port 75 --> Unknown Service --> CLOSED
+Port 76 --> Unknown Service --> CLOSED
+Port 77 --> Unknown Service --> CLOSED
+Port 78 --> Unknown Service --> CLOSED
+Port 79 --> Finger --> CLOSED
+Port 80 --> HTTP --> OPEN
+Port 81 --> Unknown Service --> CLOSED
+Port 82 --> Unknown Service --> CLOSED
+Port 83 --> Unknown Service --> CLOSED
+Port 84 --> Unknown Service --> CLOSED
+Port 85 --> Unknown Service --> CLOSED
+Port 86 --> Unknown Service --> CLOSED
+Port 87 --> Unknown Service --> CLOSED
+Port 88 --> Kerberos --> CLOSED
+Port 89 --> Unknown Service --> CLOSED
+Port 90 --> Unknown Service --> CLOSED
+Port 91 --> Unknown Service --> CLOSED
+Port 92 --> Unknown Service --> CLOSED
+Port 93 --> Unknown Service --> CLOSED
+Port 94 --> Unknown Service --> CLOSED
+Port 95 --> Unknown Service --> CLOSED
+Port 96 --> Unknown Service --> CLOSED
+Port 97 --> Unknown Service --> CLOSED
+Port 98 --> Unknown Service --> CLOSED
+Port 99 --> Unknown Service --> CLOSED
+Port 100 --> Unknown Service --> CLOSED
+Port 101 --> HOSTNAME --> CLOSED
+Port 102 --> ISO-TSAP --> CLOSED
+Port 103 --> Unknown Service --> CLOSED
+Port 104 --> Unknown Service --> CLOSED
+Port 105 --> Unknown Service --> CLOSED
+Port 106 --> Unknown Service --> CLOSED
+Port 107 --> RTELNET --> CLOSED
+Port 108 --> Unknown Service --> CLOSED
+Port 109 --> POP2 --> CLOSED
+Port 110 --> POP3 --> CLOSED
+Port 111 --> RPCBIND --> OPEN
+Port 112 --> Unknown Service --> CLOSED
+Port 113 --> Ident --> CLOSED
+Port 114 --> Unknown Service --> CLOSED
+Port 115 --> SFTP --> CLOSED
+Port 116 --> Unknown Service --> CLOSED
+Port 117 --> Unknown Service --> CLOSED
+Port 118 --> SQL Services --> CLOSED
+Port 119 --> NNTP --> CLOSED
+Port 120 --> Unknown Service --> CLOSED
+Port 121 --> Unknown Service --> CLOSED
+Port 122 --> Unknown Service --> CLOSED
+Port 123 --> NTP --> CLOSED
+Port 124 --> Unknown Service --> CLOSED
+Port 125 --> Unknown Service --> CLOSED
+Port 126 --> Unknown Service --> CLOSED
+Port 127 --> Unknown Service --> CLOSED
+Port 128 --> Unknown Service --> CLOSED
+Port 129 --> Unknown Service --> CLOSED
+Port 130 --> Unknown Service --> CLOSED
+Port 131 --> Unknown Service --> CLOSED
+Port 132 --> Unknown Service --> CLOSED
+Port 133 --> Unknown Service --> CLOSED
+Port 134 --> Unknown Service --> CLOSED
+Port 135 --> RPC --> CLOSED
+Port 136 --> Unknown Service --> CLOSED
+Port 137 --> NetBIOS Name Service --> CLOSED
+Port 138 --> NetBIOS Datagram Service --> CLOSED
+Port 139 --> NetBIOS Session Service --> OPEN
+Port 140 --> Unknown Service --> CLOSED
+Port 141 --> Unknown Service --> CLOSED
+Port 142 --> Unknown Service --> CLOSED
+Port 143 --> IMAP --> CLOSED
+Port 144 --> Unknown Service --> CLOSED
+Port 145 --> Unknown Service --> CLOSED
+Port 146 --> Unknown Service --> CLOSED
+Port 147 --> Unknown Service --> CLOSED
+Port 148 --> Unknown Service --> CLOSED
+Port 149 --> Unknown Service --> CLOSED
+Port 150 --> Unknown Service --> CLOSED
+Port 151 --> Unknown Service --> CLOSED
+Port 152 --> Unknown Service --> CLOSED
+Port 153 --> Unknown Service --> CLOSED
+Port 154 --> Unknown Service --> CLOSED
+Port 155 --> Unknown Service --> CLOSED
+Port 156 --> SQL Server --> CLOSED
+Port 157 --> Unknown Service --> CLOSED
+Port 158 --> Unknown Service --> CLOSED
+Port 159 --> Unknown Service --> CLOSED
+Port 160 --> Unknown Service --> CLOSED
+Port 161 --> SNMP --> CLOSED
+Port 162 --> SNMP Trap --> CLOSED
+Port 163 --> Unknown Service --> CLOSED
+Port 164 --> Unknown Service --> CLOSED
+Port 165 --> Unknown Service --> CLOSED
+Port 166 --> Unknown Service --> CLOSED
+Port 167 --> Unknown Service --> CLOSED
+Port 168 --> Unknown Service --> CLOSED
+Port 169 --> Unknown Service --> CLOSED
+Port 170 --> Unknown Service --> CLOSED
+Port 171 --> Unknown Service --> CLOSED
+Port 172 --> Unknown Service --> CLOSED
+Port 173 --> Unknown Service --> CLOSED
+Port 174 --> Unknown Service --> CLOSED
+Port 175 --> Unknown Service --> CLOSED
+Port 176 --> Unknown Service --> CLOSED
+Port 177 --> Unknown Service --> CLOSED
+Port 178 --> Unknown Service --> CLOSED
+Port 179 --> BGP --> CLOSED
+Port 180 --> Unknown Service --> CLOSED
+Port 181 --> Unknown Service --> CLOSED
+Port 182 --> Unknown Service --> CLOSED
+Port 183 --> Unknown Service --> CLOSED
+Port 184 --> Unknown Service --> CLOSED
+Port 185 --> Unknown Service --> CLOSED
+Port 186 --> Unknown Service --> CLOSED
+Port 187 --> Unknown Service --> CLOSED
+Port 188 --> Unknown Service --> CLOSED
+Port 189 --> Unknown Service --> CLOSED
+Port 190 --> Unknown Service --> CLOSED
+Port 191 --> Unknown Service --> CLOSED
+Port 192 --> Unknown Service --> CLOSED
+Port 193 --> Unknown Service --> CLOSED
+Port 194 --> IRC --> CLOSED
+Port 195 --> Unknown Service --> CLOSED
+Port 196 --> Unknown Service --> CLOSED
+Port 197 --> Unknown Service --> CLOSED
+Port 198 --> Unknown Service --> CLOSED
+Port 199 --> Unknown Service --> CLOSED
+Port 200 --> Unknown Service --> CLOSED
+Port 201 --> AppleTalk Routing --> CLOSED
+Port 202 --> Unknown Service --> CLOSED
+Port 203 --> Unknown Service --> CLOSED
+Port 204 --> Unknown Service --> CLOSED
+Port 205 --> Unknown Service --> CLOSED
+Port 206 --> Unknown Service --> CLOSED
+Port 207 --> Unknown Service --> CLOSED
+Port 208 --> Unknown Service --> CLOSED
+Port 209 --> Unknown Service --> CLOSED
+Port 210 --> Unknown Service --> CLOSED
+Port 211 --> Unknown Service --> CLOSED
+Port 212 --> Unknown Service --> CLOSED
+Port 213 --> Unknown Service --> CLOSED
+Port 214 --> Unknown Service --> CLOSED
+Port 215 --> Unknown Service --> CLOSED
+Port 216 --> Unknown Service --> CLOSED
+Port 217 --> Unknown Service --> CLOSED
+Port 218 --> Unknown Service --> CLOSED
+Port 219 --> Unknown Service --> CLOSED
+Port 220 --> IMAP3 --> CLOSED
+Port 221 --> Unknown Service --> CLOSED
+Port 222 --> Unknown Service --> CLOSED
+Port 223 --> Unknown Service --> CLOSED
+Port 224 --> Unknown Service --> CLOSED
+Port 225 --> Unknown Service --> CLOSED
+Port 226 --> Unknown Service --> CLOSED
+Port 227 --> Unknown Service --> CLOSED
+Port 228 --> Unknown Service --> CLOSED
+Port 229 --> Unknown Service --> CLOSED
+Port 230 --> Unknown Service --> CLOSED
+Port 231 --> Unknown Service --> CLOSED
+Port 232 --> Unknown Service --> CLOSED
+Port 233 --> Unknown Service --> CLOSED
+Port 234 --> Unknown Service --> CLOSED
+Port 235 --> Unknown Service --> CLOSED
+Port 236 --> Unknown Service --> CLOSED
+Port 237 --> Unknown Service --> CLOSED
+Port 238 --> Unknown Service --> CLOSED
+Port 239 --> Unknown Service --> CLOSED
+Port 240 --> Unknown Service --> CLOSED
+Port 241 --> Unknown Service --> CLOSED
+Port 242 --> Unknown Service --> CLOSED
+Port 243 --> Unknown Service --> CLOSED
+Port 244 --> Unknown Service --> CLOSED
+Port 245 --> Unknown Service --> CLOSED
+Port 246 --> Unknown Service --> CLOSED
+Port 247 --> Unknown Service --> CLOSED
+Port 248 --> Unknown Service --> CLOSED
+Port 249 --> Unknown Service --> CLOSED
+Port 250 --> Unknown Service --> CLOSED
+Port 251 --> Unknown Service --> CLOSED
+Port 252 --> Unknown Service --> CLOSED
+Port 253 --> Unknown Service --> CLOSED
+Port 254 --> Unknown Service --> CLOSED
+Port 255 --> Unknown Service --> CLOSED
+Port 256 --> Unknown Service --> CLOSED
+Port 257 --> Unknown Service --> CLOSED
+Port 258 --> Unknown Service --> CLOSED
+Port 259 --> Unknown Service --> CLOSED
+Port 260 --> Unknown Service --> CLOSED
+Port 261 --> Unknown Service --> CLOSED
+Port 262 --> Unknown Service --> CLOSED
+Port 263 --> Unknown Service --> CLOSED
+Port 264 --> Unknown Service --> CLOSED
+Port 265 --> Unknown Service --> CLOSED
+Port 266 --> Unknown Service --> CLOSED
+Port 267 --> Unknown Service --> CLOSED
+Port 268 --> Unknown Service --> CLOSED
+Port 269 --> Unknown Service --> CLOSED
+Port 270 --> Unknown Service --> CLOSED
+Port 271 --> Unknown Service --> CLOSED
+Port 272 --> Unknown Service --> CLOSED
+Port 273 --> Unknown Service --> CLOSED
+Port 274 --> Unknown Service --> CLOSED
+Port 275 --> Unknown Service --> CLOSED
+Port 276 --> Unknown Service --> CLOSED
+Port 277 --> Unknown Service --> CLOSED
+Port 278 --> Unknown Service --> CLOSED
+Port 279 --> Unknown Service --> CLOSED
+Port 280 --> Unknown Service --> CLOSED
+Port 281 --> Unknown Service --> CLOSED
+Port 282 --> Unknown Service --> CLOSED
+Port 283 --> Unknown Service --> CLOSED
+Port 284 --> Unknown Service --> CLOSED
+Port 285 --> Unknown Service --> CLOSED
+Port 286 --> Unknown Service --> CLOSED
+Port 287 --> Unknown Service --> CLOSED
+Port 288 --> Unknown Service --> CLOSED
+Port 289 --> Unknown Service --> CLOSED
+Port 290 --> Unknown Service --> CLOSED
+Port 291 --> Unknown Service --> CLOSED
+Port 292 --> Unknown Service --> CLOSED
+Port 293 --> Unknown Service --> CLOSED
+Port 294 --> Unknown Service --> CLOSED
+Port 295 --> Unknown Service --> CLOSED
+Port 296 --> Unknown Service --> CLOSED
+Port 297 --> Unknown Service --> CLOSED
+Port 298 --> Unknown Service --> CLOSED
+Port 299 --> Unknown Service --> CLOSED
+Port 300 --> Unknown Service --> CLOSED
+Port 301 --> Unknown Service --> CLOSED
+Port 302 --> Unknown Service --> CLOSED
+Port 303 --> Unknown Service --> CLOSED
+Port 304 --> Unknown Service --> CLOSED
+Port 305 --> Unknown Service --> CLOSED
+Port 306 --> Unknown Service --> CLOSED
+Port 307 --> Unknown Service --> CLOSED
+Port 308 --> Unknown Service --> CLOSED
+Port 309 --> Unknown Service --> CLOSED
+Port 310 --> Unknown Service --> CLOSED
+Port 311 --> Unknown Service --> CLOSED
+Port 312 --> Unknown Service --> CLOSED
+Port 313 --> Unknown Service --> CLOSED
+Port 314 --> Unknown Service --> CLOSED
+Port 315 --> Unknown Service --> CLOSED
+Port 316 --> Unknown Service --> CLOSED
+Port 317 --> Unknown Service --> CLOSED
+Port 318 --> Unknown Service --> CLOSED
+Port 319 --> Unknown Service --> CLOSED
+Port 320 --> Unknown Service --> CLOSED
+Port 321 --> Unknown Service --> CLOSED
+Port 322 --> Unknown Service --> CLOSED
+Port 323 --> Unknown Service --> CLOSED
+Port 324 --> Unknown Service --> CLOSED
+Port 325 --> Unknown Service --> CLOSED
+Port 326 --> Unknown Service --> CLOSED
+Port 327 --> Unknown Service --> CLOSED
+Port 328 --> Unknown Service --> CLOSED
+Port 329 --> Unknown Service --> CLOSED
+Port 330 --> Unknown Service --> CLOSED
+Port 331 --> Unknown Service --> CLOSED
+Port 332 --> Unknown Service --> CLOSED
+Port 333 --> Unknown Service --> CLOSED
+Port 334 --> Unknown Service --> CLOSED
+Port 335 --> Unknown Service --> CLOSED
+Port 336 --> Unknown Service --> CLOSED
+Port 337 --> Unknown Service --> CLOSED
+Port 338 --> Unknown Service --> CLOSED
+Port 339 --> Unknown Service --> CLOSED
+Port 340 --> Unknown Service --> CLOSED
+Port 341 --> Unknown Service --> CLOSED
+Port 342 --> Unknown Service --> CLOSED
+Port 343 --> Unknown Service --> CLOSED
+Port 344 --> Unknown Service --> CLOSED
+Port 345 --> Unknown Service --> CLOSED
+Port 346 --> Unknown Service --> CLOSED
+Port 347 --> Unknown Service --> CLOSED
+Port 348 --> Unknown Service --> CLOSED
+Port 349 --> Unknown Service --> CLOSED
+Port 350 --> Unknown Service --> CLOSED
+Port 351 --> Unknown Service --> CLOSED
+Port 352 --> Unknown Service --> CLOSED
+Port 353 --> Unknown Service --> CLOSED
+Port 354 --> Unknown Service --> CLOSED
+Port 355 --> Unknown Service --> CLOSED
+Port 356 --> Unknown Service --> CLOSED
+Port 357 --> Unknown Service --> CLOSED
+Port 358 --> Unknown Service --> CLOSED
+Port 359 --> Unknown Service --> CLOSED
+Port 360 --> Unknown Service --> CLOSED
+Port 361 --> Unknown Service --> CLOSED
+Port 362 --> Unknown Service --> CLOSED
+Port 363 --> Unknown Service --> CLOSED
+Port 364 --> Unknown Service --> CLOSED
+Port 365 --> Unknown Service --> CLOSED
+Port 366 --> Unknown Service --> CLOSED
+Port 367 --> Unknown Service --> CLOSED
+Port 368 --> Unknown Service --> CLOSED
+Port 369 --> Unknown Service --> CLOSED
+Port 370 --> Unknown Service --> CLOSED
+Port 371 --> Unknown Service --> CLOSED
+Port 372 --> Unknown Service --> CLOSED
+Port 373 --> Unknown Service --> CLOSED
+Port 374 --> Unknown Service --> CLOSED
+Port 375 --> Unknown Service --> CLOSED
+Port 376 --> Unknown Service --> CLOSED
+Port 377 --> Unknown Service --> CLOSED
+Port 378 --> Unknown Service --> CLOSED
+Port 379 --> Unknown Service --> CLOSED
+Port 380 --> Unknown Service --> CLOSED
+Port 381 --> Unknown Service --> CLOSED
+Port 382 --> Unknown Service --> CLOSED
+Port 383 --> Unknown Service --> CLOSED
+Port 384 --> Unknown Service --> CLOSED
+Port 385 --> Unknown Service --> CLOSED
+Port 386 --> Unknown Service --> CLOSED
+Port 387 --> Unknown Service --> CLOSED
+Port 388 --> Unknown Service --> CLOSED
+Port 389 --> LDAP --> CLOSED
+Port 390 --> Unknown Service --> CLOSED
+Port 391 --> Unknown Service --> CLOSED
+Port 392 --> Unknown Service --> CLOSED
+Port 393 --> Unknown Service --> CLOSED
+Port 394 --> Unknown Service --> CLOSED
+Port 395 --> Unknown Service --> CLOSED
+Port 396 --> Unknown Service --> CLOSED
+Port 397 --> Unknown Service --> CLOSED
+Port 398 --> Unknown Service --> CLOSED
+Port 399 --> Unknown Service --> CLOSED
+Port 400 --> Unknown Service --> CLOSED
+Port 401 --> Unknown Service --> CLOSED
+Port 402 --> Unknown Service --> CLOSED
+Port 403 --> Unknown Service --> CLOSED
+Port 404 --> Unknown Service --> CLOSED
+Port 405 --> Unknown Service --> CLOSED
+Port 406 --> Unknown Service --> CLOSED
+Port 407 --> Unknown Service --> CLOSED
+Port 408 --> Unknown Service --> CLOSED
+Port 409 --> Unknown Service --> CLOSED
+Port 410 --> Unknown Service --> CLOSED
+Port 411 --> Unknown Service --> CLOSED
+Port 412 --> Unknown Service --> CLOSED
+Port 413 --> Unknown Service --> CLOSED
+Port 414 --> Unknown Service --> CLOSED
+Port 415 --> Unknown Service --> CLOSED
+Port 416 --> Unknown Service --> CLOSED
+Port 417 --> Unknown Service --> CLOSED
+Port 418 --> Unknown Service --> CLOSED
+Port 419 --> Unknown Service --> CLOSED
+Port 420 --> Unknown Service --> CLOSED
+Port 421 --> Unknown Service --> CLOSED
+Port 422 --> Unknown Service --> CLOSED
+Port 423 --> Unknown Service --> CLOSED
+Port 424 --> Unknown Service --> CLOSED
+Port 425 --> Unknown Service --> CLOSED
+Port 426 --> Unknown Service --> CLOSED
+Port 427 --> Unknown Service --> CLOSED
+Port 428 --> Unknown Service --> CLOSED
+Port 429 --> Unknown Service --> CLOSED
+Port 430 --> Unknown Service --> CLOSED
+Port 431 --> Unknown Service --> CLOSED
+Port 432 --> Unknown Service --> CLOSED
+Port 433 --> Unknown Service --> CLOSED
+Port 434 --> Unknown Service --> CLOSED
+Port 435 --> Unknown Service --> CLOSED
+Port 436 --> Unknown Service --> CLOSED
+Port 437 --> Unknown Service --> CLOSED
+Port 438 --> Unknown Service --> CLOSED
+Port 439 --> Unknown Service --> CLOSED
+Port 440 --> Unknown Service --> CLOSED
+Port 441 --> Unknown Service --> CLOSED
+Port 442 --> Unknown Service --> CLOSED
+Port 443 --> HTTPS --> CLOSED
+Port 444 --> SNPP --> CLOSED
+Port 445 --> SMB --> OPEN
+Port 446 --> Unknown Service --> CLOSED
+Port 447 --> Unknown Service --> CLOSED
+Port 448 --> Unknown Service --> CLOSED
+Port 449 --> Unknown Service --> CLOSED
+Port 450 --> Unknown Service --> CLOSED
+Port 451 --> Unknown Service --> CLOSED
+Port 452 --> Unknown Service --> CLOSED
+Port 453 --> Unknown Service --> CLOSED
+Port 454 --> Unknown Service --> CLOSED
+Port 455 --> Unknown Service --> CLOSED
+Port 456 --> Unknown Service --> CLOSED
+Port 457 --> Unknown Service --> CLOSED
+Port 458 --> Unknown Service --> CLOSED
+Port 459 --> Unknown Service --> CLOSED
+Port 460 --> Unknown Service --> CLOSED
+Port 461 --> Unknown Service --> CLOSED
+Port 462 --> Unknown Service --> CLOSED
+Port 463 --> Unknown Service --> CLOSED
+Port 464 --> Kerberos Change/Password --> CLOSED
+Port 465 --> SMTPS --> CLOSED
+Port 466 --> Unknown Service --> CLOSED
+Port 467 --> Unknown Service --> CLOSED
+Port 468 --> Unknown Service --> CLOSED
+Port 469 --> Unknown Service --> CLOSED
+Port 470 --> Unknown Service --> CLOSED
+Port 471 --> Unknown Service --> CLOSED
+Port 472 --> Unknown Service --> CLOSED
+Port 473 --> Unknown Service --> CLOSED
+Port 474 --> Unknown Service --> CLOSED
+Port 475 --> Unknown Service --> CLOSED
+Port 476 --> Unknown Service --> CLOSED
+Port 477 --> Unknown Service --> CLOSED
+Port 478 --> Unknown Service --> CLOSED
+Port 479 --> Unknown Service --> CLOSED
+Port 480 --> Unknown Service --> CLOSED
+Port 481 --> Unknown Service --> CLOSED
+Port 482 --> Unknown Service --> CLOSED
+Port 483 --> Unknown Service --> CLOSED
+Port 484 --> Unknown Service --> CLOSED
+Port 485 --> Unknown Service --> CLOSED
+Port 486 --> Unknown Service --> CLOSED
+Port 487 --> Unknown Service --> CLOSED
+Port 488 --> Unknown Service --> CLOSED
+Port 489 --> Unknown Service --> CLOSED
+Port 490 --> Unknown Service --> CLOSED
+Port 491 --> Unknown Service --> CLOSED
+Port 492 --> Unknown Service --> CLOSED
+Port 493 --> Unknown Service --> CLOSED
+Port 494 --> Unknown Service --> CLOSED
+Port 495 --> Unknown Service --> CLOSED
+Port 496 --> Unknown Service --> CLOSED
+Port 497 --> Unknown Service --> CLOSED
+Port 498 --> Unknown Service --> CLOSED
+Port 499 --> Unknown Service --> CLOSED
+Port 500 --> ISAKMP (VPN) --> CLOSED
+
+SECURITY ANALYSIS
+------------------------------------------------------------
+
+Port 21 (FTP)
+Detected  : vsftpd 2.3.4
+Purpose        : File Transfer Protocol used for file sharing.
+Risk Level     : HIGH
+Risk           : FTP transmits data without encryption.
+Recommendation : Use SFTP or FTPS instead of FTP.
+
+Port 22 (SSH)
+Detected  : OpenSSH 4.7p1 Debian 8ubuntu1
+Purpose        : Secure remote login service.
+Risk Level     : MEDIUM
+Risk           : Weak passwords may allow brute-force attacks.
+Recommendation : Use SSH keys and disable root login.
+
+Port 23 (Telnet)
+Detected  : Linux telnetd 
+Purpose        : Remote login protocol.
+Risk Level     : HIGH
+Risk           : Telnet sends credentials in plain text.
+Recommendation : Disable Telnet and use SSH.
+
+Port 25 (SMTP)
+Detected  : Postfix smtpd 
+Purpose        : Mail transfer service.
+Risk Level     : MEDIUM
+Risk           : Open mail relays may be abused for spam.
+Recommendation : Restrict mail relay access.
+
+Port 53 (DNS)
+Detected  : ISC BIND 9.4.2
+Purpose        : Domain Name Resolution service.
+Risk Level     : MEDIUM
+Risk           : DNS amplification attacks may occur.
+Recommendation : Restrict recursive queries.
+
+Port 80 (HTTP)
+Detected  : Apache httpd 2.2.8
+Purpose        : Web server communication.
+Risk Level     : MEDIUM
+Risk           : HTTP traffic is not encrypted.
+Recommendation : Use HTTPS instead of HTTP.
+
+Port 111 (RPCBIND)
+Purpose        : Unknown Service
+Risk Level     : UNKNOWN
+Risk           : Unknown risk
+Recommendation : Investigate manually
+
+Port 139 (NetBIOS Session Service)
+Detected  : Samba smbd 3.X - 4.X
+Purpose        : Windows file sharing service.
+Risk Level     : HIGH
+Risk           : SMB vulnerabilities may expose shared resources.
+Recommendation : Disable SMBv1 and restrict access.
+
+Port 445 (SMB)
+Detected  : Samba smbd 3.X - 4.X
+Purpose        : File and printer sharing service used in Windows.
+Risk Level     : HIGH
+Risk           : SMB vulnerabilities may allow unauthorized access or ransomware attacks.
+Recommendation : Disable SMBv1, restrict access, and apply security patches.
