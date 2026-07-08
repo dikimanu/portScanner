@@ -63,6 +63,7 @@
 
     {% set show_version = data.all_results|selectattr("version", "defined")|selectattr("version", "ne", "")|list|length > 0 %}
 
+    <div class="table-scroll">
     <table>
 
         <tr>
@@ -126,7 +127,7 @@
         {% endfor %}
 
     </table>
-
+    </div>
     <!-- ===================== SECURITY ANALYSIS ===================== -->
     <h2>Security Analysis (Open Ports)</h2>
 
