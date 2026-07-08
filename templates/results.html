@@ -13,7 +13,10 @@
 
 <div class="container">
 
-    <h1>Scan Results</h1>
+<div class="container-body">
+
+    <h1>SecurePortScanner</h1>
+    <p class="subtitle">Scan Results</p>
 
     <!-- ===================== INFO BOX ===================== -->
     <div class="info-box">
@@ -24,9 +27,25 @@
         <p><strong>Scan Duration:</strong> {{ data.duration }} seconds</p>
         <p><strong>Scan Engine:</strong> {{ data.engine|default("custom")|capitalize }}</p>
 
-        <p><strong>Total Open Ports:</strong> {{ data.summary.open }}</p>
-        <p><strong>Total Closed Ports:</strong> {{ data.summary.closed }}</p>
-        <p><strong>Total Filtered Ports:</strong> {{ data.summary.filtered }}</p>
+    </div>
+
+    <!-- ===================== STAT STRIP ===================== -->
+    <div class="stat-strip">
+
+        <div class="stat-card open">
+            <div class="stat-value">{{ data.summary.open }}</div>
+            <div class="stat-label">Open</div>
+        </div>
+
+        <div class="stat-card closed">
+            <div class="stat-value">{{ data.summary.closed }}</div>
+            <div class="stat-label">Closed</div>
+        </div>
+
+        <div class="stat-card filtered">
+            <div class="stat-value">{{ data.summary.filtered }}</div>
+            <div class="stat-label">Filtered</div>
+        </div>
 
     </div>
 
@@ -145,6 +164,8 @@
         <a href="/download/txt">Download TXT Report</a>
 
     </div>
+
+</div>
 
 </div>
 <script>

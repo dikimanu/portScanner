@@ -29,6 +29,8 @@
 
 <div class="container">
 
+<div class="container-body">
+
     <!-- =========================
          HEADER
     ========================== -->
@@ -48,22 +50,28 @@
         onsubmit="startProgress()"
     >
 
+        <label class="field-label" for="target">target</label>
         <input
             type="text"
+            id="target"
             name="target"
             placeholder="Enter Target IP Address"
             required
         >
 
+        <label class="field-label" for="start_port">port_range.start</label>
         <input
             type="number"
+            id="start_port"
             name="start_port"
             placeholder="Start Port"
             required
         >
 
+        <label class="field-label" for="end_port">port_range.end</label>
         <input
             type="number"
+            id="end_port"
             name="end_port"
             placeholder="End Port"
             required
@@ -127,6 +135,8 @@
         </p>
 
     </div>
+
+</div>
 
 </div>
 
